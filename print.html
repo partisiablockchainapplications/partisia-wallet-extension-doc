@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Partisia Blockchain Applications Wallet Extension</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="get_wallet.html"><strong aria-hidden="true">1.</strong> Get the Wallet</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="initial_setup.html"><strong aria-hidden="true">1.1.</strong> Initial Setup</a></li><li class="chapter-item expanded "><a href="create_new_wallet.html"><strong aria-hidden="true">1.2.</strong> Create New Address</a></li><li class="chapter-item expanded "><a href="wallet_backup.html"><strong aria-hidden="true">1.3.</strong> Wallet Backup</a></li><li class="chapter-item expanded "><a href="wallet_settings.html"><strong aria-hidden="true">1.4.</strong> Wallet Settings</a></li></ol></li><li class="chapter-item expanded "><a href="multiple_accounts.html"><strong aria-hidden="true">2.</strong> Multiple Accounts</a></li><li class="chapter-item expanded "><a href="send_token.html"><strong aria-hidden="true">3.</strong> Send Tokens</a></li><li class="chapter-item expanded "><a href="wallet_confirm.html"><strong aria-hidden="true">4.</strong> Confirm Screen</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Partisia Blockchain Applications Wallet Extension</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="getting-the-wallet"><a class="header" href="#getting-the-wallet">Getting the Wallet</a></h1>
+<p>To use the wallet you need to download from the Chrome Web Store here:
+<a href="https://chrome.google.com/webstore/detail/partisia-wallet/gjkdbeaiifkpoencioahhcilildpjhgh">Partisia Chrome Extension</a></p>
+<blockquote>
+<p>Note: Please make sure you check before downloading that it the official wallet. The best way it to make sure the App Id is <code>gjkdbeaiifkpoencioahhcilildpjhgh</code></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="initial-setup"><a class="header" href="#initial-setup">Initial Setup</a></h1>
+<p>Before you are able to use your wallet, you must password protect it. Additionally this password will be required to be entered before anytime your private key is used.</p>
+<p>To setup your password, follow the steps when you first load your wallet.
+<img src="assets/password_prompt.png" alt="Password Prompt" /></p>
+<h3 id="reset-password"><a class="header" href="#reset-password">Reset Password</a></h3>
+<p>This password can be reset later on in settings -&gt; Change Password:
+<img src="assets/reset_password.png" alt="Reset Password" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="create-new-wallet-address"><a class="header" href="#create-new-wallet-address">Create New Wallet Address</a></h1>
+<p>There are three types of ways create a new partisia address:</p>
+<ul>
+<li>Mnemonic Phrase</li>
+<li>Private Key</li>
+<li>Twitter Authentication</li>
+</ul>
+<h3 id="mnemonic-phrase"><a class="header" href="#mnemonic-phrase">Mnemonic Phrase</a></h3>
+<p>By default the mnemonic phrase will be 12 words, but this increases in setting-&gt;General up to (12, 15, 18, 21, 24)</p>
+<h3 id="private-key"><a class="header" href="#private-key">Private Key</a></h3>
+<p>The private key should be a hexadecimal string with a length of 64</p>
+<h3 id="twitter-authentication"><a class="header" href="#twitter-authentication">Twitter Authentication</a></h3>
+<p>You can obtain a Partisia Address through Twitter.  This is done in cooperation with <a href="https://tor.us/">Torus Labs</a>.
+Simply authenticate through twitter and the Wallet will automatically create your private key and address for you.</p>
+<h2 id="receive-funds"><a class="header" href="#receive-funds">Receive funds</a></h2>
+<p>To view your address simply look at the header row of the wallet or click the receive button to show your full address and corresponding QR code</p>
+<p><img src="assets/wallet_receive.png" alt="Reset Password" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wallet-backup"><a class="header" href="#wallet-backup">Wallet Backup</a></h1>
+<p>It is very important to always keep a safely secured backup of all your private keys.  This will be the only way to recover your funds in the event anything happens to your computer.</p>
+<p>To take a backup, select the account you wish to backup and then from the menu select <code>Account Backup</code></p>
+<p><img src="assets/wallet_backup.png" alt="Reset Password" /></p>
+<p>You will be prompted to input your password and afterwards your private key or mnemonic phrase will be shown</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wallet-settings"><a class="header" href="#wallet-settings">Wallet Settings</a></h1>
+<p>Access Wallet Settings from the Menu</p>
+<p><img src="assets/wallet_settings.png" alt="Wallet Settings" /></p>
+<ul>
+<li>General:
+<ul>
+<li>Open as Popout Window: When clicking extension icon in toolbar opens a separate window instead of popup window.  This is nice if you need to move back and forth between webpages and windows to input information</li>
+<li>Mnemonic Phrase: This is how many words in the Mnemonic Phrase. The more words the more entropy making brute force attacks more difficult. Choose between (12, 15, 18, 21, 24)</li>
+<li>Wallet Timeout: This is how long of inactivity before the Wallet automatically Locks and requiring a password to be entered</li>
+<li>Transaction Valid Time: Each transaction has an expiry time before the blockchain no considers the transaction valid. This is how long the expiration is. A longer time period gives you more time to review before sending but a shorter time period is helpful to prevent replay attacks.</li>
+<li>Block Explorer Account Url: This allows you to customize the base url for viewing on chain account addresses</li>
+<li>Block Explorer Transaction Url: This allows you to customize the base url for viewing on chain transactions</li>
+</ul>
+</li>
+<li>Change Password: Reset your Wallet password</li>
+<li>About: Displays Wallet version and link to source code</li>
+<li>Reset All: Allows clear out all storage and cache in the wallet. It is critical to backup your wallet first before doing this, as that is the only way to recover your wallet later</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="multiple-accounts"><a class="header" href="#multiple-accounts">Multiple Accounts</a></h1>
+<p>You can have multiple accounts at the same time in the wallet. From the menu button click either <code>Create Account</code> or <code>Import Account</code></p>
+<p><img src="assets/multiple_accounts.png" alt="Wallet Settings" /></p>
+<p>This will then allow you to Import or Create a new account.</p>
+<blockquote>
+<ul>
+<li>Note: if you want to use your Twitter as your wallet you will need to select <code>Import Account</code></li>
+</ul>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="send-tokens"><a class="header" href="#send-tokens">Send Tokens</a></h1>
+<p>To send tokens, from the home screen click <code>SEND</code> or click the individual <code>ERC-20 Token</code> or <code>NFT</code> from the wallet list</p>
+<p><img src="assets/send_token.png" alt="Send Token" /></p>
+<h3 id="filling-in-the-form"><a class="header" href="#filling-in-the-form">Filling in the Form</a></h3>
+<h4 id="address-or-twitter-handle"><a class="header" href="#address-or-twitter-handle">Address or Twitter Handle:</a></h4>
+<ul>
+<li>User Addresses are 42 long hex staring with <code>00</code></li>
+<li>System Contract Addresses are 42 long hex staring with <code>01</code></li>
+<li>Public Contract Addresses are 42 long hex staring with <code>02</code></li>
+<li>Zero Knowledge Contract Addresses are 42 long hex staring with <code>03</code></li>
+<li>Twitter Handle must start with <code>@</code> and are Case Insensitive</li>
+</ul>
+<h4 id="amount"><a class="header" href="#amount">Amount</a></h4>
+<p>This is the amount of Tokens you would like to send.</p>
+<h4 id="optional-memonumber"><a class="header" href="#optional-memonumber">Optional Memo/Number</a></h4>
+<p>The MPC token will allow you to include a <code>Memo</code> string or a <code>Number Tag</code>. This is particularly important for exchanges to make sure you send your transactions correctly.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="confirm-screen"><a class="header" href="#confirm-screen">Confirm Screen</a></h1>
+<p><img src="assets/wallet_confirm.png" alt="wallet confirm" /></p>
+<p>Before any transaction you will get prompted a review screen like the above. It is important to carefully review the information in this screen to make sure you are sending the transaction you intend.</p>
+<p>Some important things to consider:</p>
+<ul>
+<li>Make sure the <code>Network</code> is correct</li>
+<li>Make sure the receiving <code>Account</code> is correct</li>
+<li>Make sure the details of the Operation are correct.
+<blockquote>
+<p>Please note that if you are sending a token that the numbers are shown without decimals</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="edit-fee"><a class="header" href="#edit-fee">Edit Fee</a></h3>
+<p>You can edit the fee you pay for the transaction and increase or decrease depending on preference</p>
+<h3 id="add-more-time"><a class="header" href="#add-more-time">Add more time</a></h3>
+<p>If your time expires you can click <code>Add more time</code> to reset the clock. There is no harm in doing this</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>

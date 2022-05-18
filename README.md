@@ -1,1 +1,0 @@
-# partisia-wallet-extension-doc
