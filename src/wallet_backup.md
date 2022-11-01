@@ -5,4 +5,4 @@ To take a backup, select the account you wish to backup and then from the menu s
 
 ![Reset Password](assets/wallet_backup.png)
 
-You will be prompted to input your password and afterwards your private key or mnemonic phrase will be shown
+You will be prompted to input your password and afterwards your private key or mnemonic phrase will be shown. You also have the option to export your keys to an encrypted keystore file if you prefer not working with the keys directly.
